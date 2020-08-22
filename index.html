@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoCode`s Gold List aka ⭐`s</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.16/darkreader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.all.min.js"></script>
+    <script src="https://teppeis.github.io/htmlspecialchars/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/litera/bootstrap.min.css"
+        integrity="sha512-iKbrjHn3GnahCXWH0mr6Rxqog4NY9hCPjtf3x3ab0tWMyV0MUAHpNyIJoIwaMY05FGJNEW7e59X/9UAM7KOP6A=="
+        crossorigin="anonymous" />
+</head>
+<style>
+    /* I'm too dumb to do this in bootstrap. */
+    #content {
+        grid-column: 2;
+    }
+
+    .card {
+        width: 60vw !important;
+        position: relative;
+        display: block;
+    }
+
+    #wrapper {
+        display: grid;
+        grid-template-columns: auto max-content auto;
+    }
+
+    #toTop {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+        <a class="navbar-brand">NeoCode`s Gold List aka ⭐`s</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/xRealNeon" target="_blank">My Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/xRealNeon?tab=stars" target="_blank">My Stars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/xRealNeon/GoldList" target="_blank">This Project</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="wrapper">
+        <div id="content"></div>
+    </div>
+    <a onclick="window.scrollTo({top: 0, behavior: 'smooth'});" id="toTop" title="Go to top"
+        class="btn btn-primary">Top</a>
+</body>
+<script src="main.js"></script>
+
+</html>
