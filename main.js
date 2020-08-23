@@ -34,7 +34,7 @@ function appendPage() {
             $('#loader').remove();
             data.forEach(element => {
                 var homepageButton = "";
-                if (element.homepage != null) {
+                if (element.homepage) {
                     homepageButton = `<a href="${element.homepage}" class="btn btn-secondary" target="_blank">Open Homepage</a>`;
                 }
                 $("#content").append(`
