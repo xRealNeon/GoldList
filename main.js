@@ -33,12 +33,17 @@ function appendPage() {
         success: function (data, status, xhr) {
             $('#loader').remove();
             data.forEach(element => {
+                var homepageButton = "";
+                if (element.homepage != null) {
+                    homepageButton = `<a href="${element.homepage}" class="btn btn-secondary" target="_blank">Open Homepage</a>`;
+                }
                 $("#content").append(`
                 <div class="card  w-75" style="width: 18rem;" data-aos="fade-up" data-aos-duration="300">
   <div class="card-body">
     <h5 class="card-title">${element.full_name}</h5>
     <p class="card-text">${htmlspecialchars(element.description)}</p>
     <a href="${element.html_url}" class="btn btn-primary" target="_blank">Open</a>
+    ${homepageButton}
   </div>
 </div><br>
                 `);
@@ -50,8 +55,6 @@ function appendPage() {
                 icon: 'error',
                 title: 'Oops...',
                 html: 'Something went wrong!<br>The ratelimit was probably reached.'
-            }).then((result) => {
-                location.reload();
             });
         }
     });
