@@ -8,7 +8,6 @@ var page = 1;
 $(window).scroll(function () {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
         appendPage();
-        page++;
     }
 
     if ($(window).scrollTop() > 20 || $(window).scrollTop() > 20) {
@@ -27,11 +26,10 @@ function appendPage() {
       <span class="sr-only">Loading...</span>
     </div></div>
         `);
-    }
-
-    $.ajax('https://api.github.com/users/xRealNeon/starred?per_page=50&page=' + page, {
+        $.ajax('https://api.github.com/users/xRealNeon/starred?per_page=50&page=' + page, {
         success: function (data, status, xhr) {
             $('#loader').remove();
+            page++;
             data.forEach(element => {
                 var homepageButton = "";
                 if (element.homepage) {
@@ -58,4 +56,5 @@ function appendPage() {
             });
         }
     });
+    }
 }
